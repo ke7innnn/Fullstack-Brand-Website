@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Blog {
-    id: number;
+    id: string;
     title: string;
     image: string;
     description: string;
@@ -24,7 +24,7 @@ export default function BlogPage() {
         fetch('/api/blogs')
             .then(res => res.json())
             .then((data: Blog[]) => {
-                const found = data.find(b => b.id === Number(params.id));
+                const found = data.find(b => b.id === params.id);
                 setBlog(found || null);
                 setLoading(false);
             });
