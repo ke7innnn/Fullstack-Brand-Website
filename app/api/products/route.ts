@@ -3,7 +3,9 @@ import prisma from '@/lib/prisma';
 import cloudinary from '@/lib/cloudinary';
 
 // Force dynamic rendering to prevent build-time DB connection issues
+// Force dynamic rendering to prevent build-time DB connection issues
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
