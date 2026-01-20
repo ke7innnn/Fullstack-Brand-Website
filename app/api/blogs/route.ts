@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import cloudinary from '@/lib/cloudinary';
 
+// Force dynamic rendering to prevent build-time DB connection issues
+export const dynamic = 'force-dynamic';
+
 // GET: Fetch all blogs
 export async function GET() {
     try {
