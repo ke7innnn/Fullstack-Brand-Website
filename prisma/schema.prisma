@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  price       String
+  image       String
+  description String
+  sale        Boolean  @default(false)
+  discount    Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Blog {
+  id           String   @id @default(uuid())
+  title        String
+  image        String
+  description  String
+  date         String
+  externalLink String?
+  createdAt    DateTime @default(now())
+}

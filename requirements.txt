@@ -1,9 +1,0 @@
-streamlit
-langchain
-langchain-google-genai
-langchain-community
-langchain-experimental
-sentence-transformers
-chromadb
-python-dotenv
-pysqlite3
